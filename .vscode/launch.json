@@ -1,0 +1,27 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Advpl Debug",
+			"type": "advpl",
+			"request": "launch",
+			"args": [],
+			"cwd": "",
+			"programRun": "${command:AskForProgramName}",
+			"stopOnEntry": false,
+			"enviromentInfo": "${command:GetEnvInfos}",
+			"workspace": "${workspaceFolder}/"
+		},
+		{
+			"type": "totvs_tdsreplay_debug",
+			"request": "launch",
+			"name": "${1:%tds.package.tdsreplay.debug%}",
+			"cwb": "${workspaceFolder}",
+			"tdsReplayFile": "",
+			"ignoreFiles": false,
+			"password": "",
+			"includeSources": "*",
+			"excludeSources": ""
+		}
+	]
+}
