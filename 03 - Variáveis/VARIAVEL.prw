@@ -32,7 +32,7 @@ Local dData := DATE()
 Local aArray := {"João","Maria","Jose"}
 
 // Variáveis que recebe valores em bloco de código e também, técnica de concatenação
-Local bBloco := { || nValor := 2, MsgAlert("O número é: ", + cValToChar(nValor)) }
+Local bBloco := {|| nValor := 2, MsgAlert("O Numero é: "+ cValToChar(nValor))}
 
 /* 
     Função que retorna qualquer tipo de valor que ela recebe como parâmetro em string,um exemplo seria, 
