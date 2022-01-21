@@ -2,17 +2,6 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Advpl Debug",
-			"type": "advpl",
-			"request": "launch",
-			"args": [],
-			"cwd": "",
-			"programRun": "${command:AskForProgramName}",
-			"stopOnEntry": false,
-			"enviromentInfo": "${command:GetEnvInfos}",
-			"workspace": "${workspaceFolder}/"
-		},
-		{
 			"type": "totvs_tdsreplay_debug",
 			"request": "launch",
 			"name": "${1:%tds.package.tdsreplay.debug%}",
@@ -21,84 +10,8 @@
 			"ignoreFiles": false,
 			"password": "",
 			"includeSources": "*",
-			"excludeSources": ""
-		}
-	]
-}
-
-/* {
-	"configurations": [
-	{
-		"name": "Advpl Debug",
-		"type": "advpl",
-		"request": "launch",
-		"args": [],
-		"cwd": "",
-		"programRun": "${command:AskForProgramName}",
-		"stopOnEntry": false,
-		"enviromentInfo": "${command:GetEnvInfos}",
-		"workspace": "${workspaceFolder}/"
-	}
-	]
-} */
-
-/*{
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"name": "Advpl Debug",
-			"type": "advpl",
-			"request": "launch",
-			"args": [],
-			"cwd": "",
-			"programRun": "${command:AskForProgramName}",
-			"stopOnEntry": false,
-			"enviromentInfo": "${command:GetEnvInfos}",
-			"workspace": "${workspaceFolder}/"
-		},
-		{
-			"type": "totvs_tdsreplay_debug",
-			"request": "launch",
-			"name": "${1:%tds.package.tdsreplay.debug%}",
-			"cwb": "${workspaceFolder}",
-			"tdsReplayFile": "C:\\TOTVS\\TDS replay",
-			"ignoreFiles": false,
-			"password": "",
-			"includeSources": "*",
 			"excludeSources": "",
 			"smartclientBin": "C:\\TOTVS\\Protheus\\Protheus\\bin\\smartclient\\smartclient.exe"
 		}
 	]
-}*/
-
-/* {
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"type": "totvs_language_debug",
-			"request": "launch",
-			"name": "Totvs language Debug",
-			"program": "${command:AskForProgramName}",
-			"cwb": "${workspaceFolder}",
-			"smartclientBin": "C:\\Users\\eduar\\Desktop\\atalhos\\protheus\\",
-			"isMultiSession": true,
-			"enableTableSync": true
-		}
-	],
-	"lastPrograms": [
-		{
-			"args": [],
-			"label": "u_compila",
-			"description": ""
-		},
-		{
-			"args": [],
-			"label": "sigamdi",
-			"description": ""
-		},
-		{
-			"label": "U_OlaMundo"
-		}
-	],
-	"lastProgramExecuted": "U_OlaMundo"
-} */
+}

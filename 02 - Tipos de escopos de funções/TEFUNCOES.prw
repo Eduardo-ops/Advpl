@@ -24,7 +24,7 @@ MAIN FUNCTION()
  Return
 
  /*  
-    Funções user function, são funções definidas pelo usuário, que não pertencem as funções padrão do protheus, 
+    Funções user function, são funções definidas pelo usuário(funções personalizadas), que não pertencem as funções padrão do protheus, 
     podendo ser invocada por qualquer outra função padrão do protheus.
     As função por padrão vem sempre com dois caracteres de início, são eles: U_, nesse caso, seguindo a regra de que 
     toda função deve conter 10 caracteres, as user function sempre serão 8, somando com os dois obrigatórios informados
