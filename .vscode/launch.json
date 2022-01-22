@@ -6,7 +6,7 @@
 			"request": "launch",
 			"name": "${1:%tds.package.tdsreplay.debug%}",
 			"cwb": "${workspaceFolder}",
-			"tdsReplayFile": "",
+			"tdsReplayFile": "C:\\TOTVS\\TDS replay",
 			"ignoreFiles": false,
 			"password": "",
 			"includeSources": "*",
