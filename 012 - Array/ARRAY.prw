@@ -8,7 +8,7 @@ User Function ARRAY()
         Cada item de um arrau é referenciado pela indicação de sua numeração, iniciando pela posição numérica 1.
     */
 
-    Local dData := Data()
+    Local dData := Date()
     Local aValores := {"João", dData, 100}
 
     Alert("Valor do array aValores na posição 2:" + aValores[2])
