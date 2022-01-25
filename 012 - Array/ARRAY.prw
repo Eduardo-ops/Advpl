@@ -11,7 +11,7 @@ User Function ARRAY()
     Local dData := Date()
     Local aValores := {"João", dData, 100}
 
-    Alert("Valor do array aValores na posição 2:" + aValores[2])
-    Alert("Valor do array aValores na posição 3: " + aValores[3])
+    Alert("Valor do array aValores na posição 2:" + cValToChar(aValores[2]))
+    Alert("Valor do array aValores na posição 3: " + cValToChar(aValores[3]))
 
 RETURN
