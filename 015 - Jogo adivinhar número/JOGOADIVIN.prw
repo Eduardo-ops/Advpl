@@ -6,7 +6,7 @@ User Function JOGOADIVIN()
     Local nJogada := 0
     Local nCount := 0
 
-    WHILE (nJogada != nNum)
+    WHILE (nCount != 5)
         nJogada := Val(FWInputBox("Informe seu número de adivinhação: "))
         Alert("Número escolhido: " + cValToChar(nJogada))
 
@@ -20,8 +20,11 @@ User Function JOGOADIVIN()
 
         nCount++
         IF (nCount == 5)
-            Alert("Sua quantidade de tentivas já excedeu, suba na sala do Armando!")
-            nJogada := 50
+            Alert("Sua quantidade de tentativas excederam, suba no escritório do Armando.")
+        ENDIF
+
+        IF (nJogada == nNum)
+            nCount := 5
         ENDIF
     ENDDO
 
