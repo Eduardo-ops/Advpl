@@ -1,6 +1,12 @@
 #include 'protheus.ch'
 #include 'parmtype.ch'
 
+/* 
+    O Advpl irá selecionar um número de 1 a 100(automaticamente). O desafio do jogador é descobir qual número 
+    foi definido pelo Advpl. A cada tentativa o jogador receberá uma dica, dizendo se o valor que informou é maior
+    ou menor do número sorteado. São no total de 5 tentativas para adivinhar o número.
+ */
+
 User Function JOGOADIVIN()
     Local nNum := Randomize(1, 100)
     Local nJogada := 0
