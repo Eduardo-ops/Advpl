@@ -2,9 +2,13 @@
 #include 'parmtype.ch'
 
 User Function JOGOADIVIN()
-    Local nNum := 50
+    Local nNum := Randomize(1, 100)
     Local nJogada := 0
     Local nCount := 0
+
+    MsgAlert("Bem vindo ao jogo de adivinhação protheus!")
+    MsgAlert("Você tem 5 tentativas para adivinhar.")
+    MsgAlert("Escolha números de 1 a 100")
 
     WHILE (nCount != 5)
         nJogada := Val(FWInputBox("Informe seu número de adivinhação: "))
