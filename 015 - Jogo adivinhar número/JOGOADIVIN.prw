@@ -8,7 +8,7 @@
  */
 
 User Function JOGOADIVIN()
-    Local nNum := Randomize(1, 100)
+    Local nNum := Randomize(1, 100)// Retornará um número de 1 a 100
     Local nJogada := 0
     Local nCount := 0
 
@@ -20,6 +20,7 @@ User Function JOGOADIVIN()
         nJogada := Val(FWInputBox("Informe seu número de adivinhação: "))
         Alert("Número escolhido: " + cValToChar(nJogada))
 
+        // Verificando se o jogador acertou o número ou não.
         IF (nJogada == nNum) 
             MsgAlert("Você acertou o número e finalizou o jogo, parabéns!!!")
         ELSEIF (nJogada > nNum)
@@ -28,11 +29,19 @@ User Function JOGOADIVIN()
             MsgAlert("Dica: Número informado é menor do que o do jogo!")
         ENDIF
 
+        // Contador de tentativas
         nCount++
+
+        // Informa quando o limite de tentativas já chegou ao limite.
         IF (nCount == 5)
             Alert("Sua quantidade de tentativas excederam, suba no escritório do Armando.")
         ENDIF
 
+       /*  
+        Definindo o valor de tentativas ao máximo do limite estabelecido, conforme o jogador acerte o número
+        de adivinhação, pois a estrutura sempre funciona enquanto o número de tentativas for diferente de seu
+        limite de 5. 
+        */
         IF (nJogada == nNum)
             nCount := 5
         ENDIF
