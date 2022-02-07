@@ -3,7 +3,12 @@
 #include 'TopConn.ch'
 
 /* 
-        EoF() - Final de arquivo
+        RetSQLName() - Retorna o nome físico da tabela, baseado em um alias, para que seja usado nas construições
+        de SELECT FROM TABELA da query.
+        TCQuery      - TcQuery é o comando em ADVPL que executa um SQL no banco de dados e retorna o resultado em 
+        uma área de trabalho.
+        EoF()        - Final de arquivo.
+        DBSkip()     - 
 */
 
 User Function CONSSQLADV()
@@ -13,6 +18,7 @@ User Function CONSSQLADV()
         Local aDados := {}
         Local nCount := 0
 
+        // Realizando consulta no banco de dados
         cQuery := " SELECT "
         cQuery += " B1_COD AS CODIGO, "
         cQuery += " B1_DESC AS DESCRICAO "
@@ -28,7 +34,7 @@ User Function CONSSQLADV()
         WHILE ! TMP->(EoF())
             AADD(aDados, TMP->CODIGO)
             AADD(aDados, TMP->DESCRICAO)
-            TMP->(DBSkip())
+            TMP->(DBSkip()) //Desloca 1 registro "para frente", respeitando seu valor default (1)
         ENDDO
 
         Alert(Len(aDados))
