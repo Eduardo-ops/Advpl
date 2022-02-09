@@ -39,6 +39,13 @@ User Function MANIDARECL()
             SB1->(MsUnlock())
         ENDIF
 
+        MsgAlert("Produto alterado com sucesso!!!")
+
+        // Se a pergunta for confirmada, cancela todos os lançamentos na transação.
+        IF MsgYesNo("Deseja desfazer as alteraçõs de registro e disarmar a transação ?")
+            DisarmTransaction()
+        ENDIF
+
     End Transaction
     RestArea(aArea)
 
