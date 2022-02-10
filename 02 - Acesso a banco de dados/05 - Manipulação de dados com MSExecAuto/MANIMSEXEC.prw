@@ -1,6 +1,15 @@
 #include 'protheus.ch'
 #include 'parmtype.ch'
 
+/* 
+    Código que permite inclusão de dados na tabela SB1, cadastro de clientes.
+
+    MSExecAuto()  - Fazer manutenção automática (inclusão, alteração e exclusão) das rotinas de manipulação de dados 
+                    do sistema, automatizando o processo de entrada de dados sem a necessidade de desenvolver rotinas 
+                    especificas.
+    Mostra Erro() - Esta função mostra os erros gerados na execução dos processos automáticos.
+*/
+
 User Function MANIMSEXEC()
 
     Local aArea := GetArea()
