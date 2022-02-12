@@ -7,6 +7,7 @@ User Function MBROWSE()
 	Private cCadastro := "Cadastro Produtos MBROWSE - Rotina personalizada"
 	Private aRotina := {}
 
+    // Funcionalidades da rotina
 	AADD(aRotina,{"Pesquisar", "AxPesqui",0,1})
 	AADD(aRotina,{"Visualizar", "AxVisual",0,2})
 	AADD(aRotina,{"Incluir", "AxInclui",0,3})
