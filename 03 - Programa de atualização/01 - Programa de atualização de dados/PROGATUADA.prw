@@ -3,6 +3,10 @@
 
 /* 
     Rotina personalizada
+    Esse componente visual é muito utilizado na interface das aplicações para manipular as informações.
+    Essa função permite que se crie uma interface com as opções básicas de manipulação dos registros: 
+    pesquisar, visualizar, incluir, alterar e excluir.
+    É indicada para os cadastros que possuem validações simples.
 
     AxCadastro() - Permite, por meio de uma interface simples e com poucas opções de customização, que o
                    usuário manipule as informações de um arquivo de dados, conforme a necessidade da aplicação.
@@ -28,4 +32,4 @@ User Function PROGATUADA()
 
     AxCadastro(cAlias, cTitulo, cVldExc, cVldAlt)
 
-RETURN
+RETURN NIL
