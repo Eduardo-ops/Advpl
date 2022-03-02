@@ -11,12 +11,12 @@ User Function MBROWSEII()
 	Private aIndexSA2 := {}
 	Private bFiltraBrw := {|| FilBrowse(cAlias, @aIndexSA2, @cFiltra)}
 
-	AADD(aRotina,{"Pesquisar",  "AxPesqui"   , 0,1})
-	AADD(aRotina,{"Visualizar", "AxVisual"   , 0,2})
-	AADD(aRotina,{"Incluir",    "U_BInclui"  , 0,3})
-	AADD(aRotina,{"Alterar",    "U_BAltera"  , 0,4})
-	AADD(aRotina,{"Exluir",    "U_BDelete"   , 0,5})
-	AADD(aRotina,{"Legenda",    "U_BLegenda" , 0,6})
+	AADD(aRotina,{"Pesquisar",  "AxPesqui"    , 0,1})
+	AADD(aRotina,{"Visualizar", "AxVisual"    , 0,2})
+	AADD(aRotina,{"Incluir",    "U_BInclui"   , 0,3})
+	AADD(aRotina,{"Alterar",    "U_BAltera"   , 0,4})
+	AADD(aRotina,{"Exluir",     "U_BDelete"   , 0,5})
+	AADD(aRotina,{"Legenda",    "U_BLegenda"  , 0,6})
 
 	DbSelectArea(cAlias)
 	DbSetOrder(1)
@@ -28,4 +28,61 @@ User Function MBROWSEII()
 
 	EndFilBrw(cAlias,aIndexSA2)
 
+RETURN
+
+//---------------------------------------------------------
+// Função BInclui - Inclusão
+//---------------------------------------------------------
+User Function BInclui(cAlias, nReg, nOpc)
+	Local nOpcao := 0
+	nOpcao := AxInclui(cAlias, nReg, nOpc)
+
+	IF nOpcao == 1
+		MsgInfo("Inclusão realizada com sucesso!")
+	ELSE
+		MsgAlert("Inclusão Cancelada.")
+	ENDIF
+RETURN
+
+//---------------------------------------------------------
+// Função BAltera - Alterar
+//---------------------------------------------------------
+User Function BAltera(cAlias, nReg, nOpc)
+	Local nOpcao := 0
+	nOpcao := AxAltera(cAlias, nReg, nOpc)
+
+	IF nOpcao == 1
+		MsgInfo("Fornecedor alterado com sucesso!!!")
+	ELSE
+		MsgAlert("Alteração cancelada.")
+	ENDIF
+RETURN
+
+//---------------------------------------------------------
+// Função BDelete - Exclusão
+//---------------------------------------------------------
+User Function BDelete(cAlias, nReg, nOpc)
+	Local nOpcao := 0
+	nOpcao := AxDeleta(cAlias, nReg, nOpc)
+
+	IF nOpcao == 1
+		MsgInfo("Fornecedor excluído com sucesso!!!")
+	ELSE
+		MsgAlert("Exclusão cancelada.")
+	ENDIF
+RETURN
+
+//---------------------------------------------------------
+// Função BLegenda - Legenda
+//---------------------------------------------------------
+User Function BLegenda()
+	Local aLegenda := {}
+
+	AADD(aLegenda,{"BR_VERDE",   "Fornecedor Física"})
+	AADD(aLegenda,{"BR_AMARELO", "Fornecedor Jurídico"})
+	AADD(aLegenda,{"BR_LARANJA", "Exportação"})
+	AADD(aLegenda,{"BR_MARROM",  "Fornecedor Rural"})
+	AADD(aLegenda,{"BR_PRETO",    "Não classificado"})
+
+	BrwLegenda(cCadastro, "Legenda", aLegenda)
 RETURN
