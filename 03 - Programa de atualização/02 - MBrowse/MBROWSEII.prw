@@ -1,6 +1,8 @@
 #include 'protheus.ch'
 #include 'parmtype.ch'
 
+/* Tela SA2 personalizada */
+
 User Function MBROWSEII()
 
 	Local cAlias := "SA2"
@@ -11,12 +13,19 @@ User Function MBROWSEII()
 	Private aIndexSA2 := {}
 	Private bFiltraBrw := {|| FilBrowse(cAlias, @aIndexSA2, @cFiltra)}
 
-	AADD(aRotina,{"Pesquisar",  "AxPesqui"    , 0,1})
-	AADD(aRotina,{"Visualizar", "AxVisual"    , 0,2})
-	AADD(aRotina,{"Incluir",    "U_BInclui"   , 0,3})
-	AADD(aRotina,{"Alterar",    "U_BAltera"   , 0,4})
-	AADD(aRotina,{"Exluir",     "U_BDelete"   , 0,5})
-	AADD(aRotina,{"Legenda",    "U_BLegenda"  , 0,6})
+	AADD(aRotina,{"Pesquisar"  , "AxPesqui"   , 0,1})
+	AADD(aRotina,{"Visualizar" , "AxVisual"   , 0,2})
+	AADD(aRotina,{"Incluir"    ,"U_BInclui"   , 0,3})
+	AADD(aRotina,{"Alterar"    ,"U_BAltera"   , 0,4})
+	AADD(aRotina,{"Exluir"     ,"U_BDelete"   , 0,5})
+	AADD(aRotina,{"Legenda"    ,"U_BLegenda"  , 0,6})
+
+	//Cores legendas
+	AADD(aCores,{"A2_TIPO == 'F'"  , "BR_VERDE"   })// Se o campo Tipo do fornecedor for igual a F(Físico), legenda recebe a cor verde;
+	AADD(aCores,{"A2_TIPO == 'J'"  , "BR_AMARELO" })
+	AADD(aCores,{"A2_TIPO == 'X'"  , "BR_LARANJA" })
+	AADD(aCores,{"A2_TIPO == 'R'"  , "BR_MARROM"  })
+	AADD(aCores,{"Empity(A2_TIPO)" , "BR_PRETO"   })
 
 	DbSelectArea(cAlias)
 	DbSetOrder(1)
@@ -24,7 +33,7 @@ User Function MBROWSEII()
 	Eval(bFiltraBrw)
 
 	dbGoTop()
-	mBrowse(6,1,22,75,cAlias)
+	mBrowse(6,1,22,75,cAlias,,,,,,aCores)
 
 	EndFilBrw(cAlias,aIndexSA2)
 
@@ -78,11 +87,11 @@ RETURN
 User Function BLegenda()
 	Local aLegenda := {}
 
-	AADD(aLegenda,{"BR_VERDE",   "Fornecedor Física"})
-	AADD(aLegenda,{"BR_AMARELO", "Fornecedor Jurídico"})
-	AADD(aLegenda,{"BR_LARANJA", "Exportação"})
-	AADD(aLegenda,{"BR_MARROM",  "Fornecedor Rural"})
-	AADD(aLegenda,{"BR_PRETO",    "Não classificado"})
+	AADD(aLegenda,{"BR_VERDE"   , "Fornecedor Física"  })
+	AADD(aLegenda,{"BR_AMARELO" , "Fornecedor Jurídico"})
+	AADD(aLegenda,{"BR_LARANJA" , "Exportação"         })
+	AADD(aLegenda,{"BR_MARROM"  , "Fornecedor Rural"   })
+	AADD(aLegenda,{"BR_PRETO"   , "Não classificado"   })
 
 	BrwLegenda(cCadastro, "Legenda", aLegenda)
 RETURN
