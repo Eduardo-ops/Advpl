@@ -15,3 +15,32 @@
 		}
 	]
 }
+/* {
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "totvs_language_debug",
+			"request": "launch",
+			"name": "Depuração TOTVS",
+			"program": "${command:AskForProgramName}",
+			"cwb": "${workspaceFolder}",
+			"smartclientBin": "C:\\TOTVS\\Protheus\\Protheus\\bin\\smartclient.exe",
+			"isMultiSession": true,
+			"enableMultiThread": true,
+			"enableTableSync": true
+		}
+	],
+	"lastPrograms": [
+		{
+			"label": "SIGAMDI"
+		},
+		{
+			"label": "U_MBROWSEII"
+		},
+		{
+			"args": [],
+			"label": "U_MBROWSEII"
+		}
+	],
+	"lastProgramExecuted": "SIGAMDI"
+} */
