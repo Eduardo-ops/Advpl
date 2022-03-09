@@ -4,7 +4,7 @@
 /* 
     O cliente solicita o desenvolvimento de uma tratativa no 
     sistema protheus da empresa, onde não pode ser permitido 
-    que o usuário inclua produtos do tipo "PA" com a conta contábil "001".
+    que o usuário inclua produtos do tipo "PA" com a conta contábil "005".
 */
 
 /*
@@ -21,7 +21,7 @@ User Function A010TOK()
 	Local cTipo := AllTrim(M->B1_TIPO)
 	Local cConta := AllTrim(M->B1_CONTA)
 
-	IF (cTipo = "PA" .AND. cConta = "001")
+	IF (cTipo = "PA" .AND. cConta = "005")
 		lExecuta := .F.
 		Alert("A conta <b>" + cConta + " não pode ser associada com um produto do tipo <b>" + cTipo)
 	ENDIF
